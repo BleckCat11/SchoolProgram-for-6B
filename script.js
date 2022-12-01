@@ -1,3 +1,6 @@
+let array = []
+
+
 function check() {
   let input = document.getElementById("input").value;
   if (input == "123123") {
@@ -18,5 +21,10 @@ if (i.value.length == ""||i.value.length == " "){
     }
     if (allInputs[2].value == allInputs[3].value && allInputs[2].value.length > 4){
         window.location.href = "index.html";
+        addACourse()
     }
+}
+
+function addACourse(){
+    
 }
