@@ -19,10 +19,38 @@ margin-left: 13px;
 body{
     height: 5000px;
 }
+
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .everything{
     height: 23px;
     font-size: large;
 }
 #div1{
     color: red;
+}
+
+._button {
+    width: 25%;
+    padding: 2% 0;
+}
+
+._courseCard {
+    width: 30%;
+    height: 200px;
+    margin-bottom: 1%;
+}
+
+._courseCardName {
+    padding: 3% 0;
+    font-weight: bold;
+}
+
+._courseHeader {
+    align-self: center;
 }
