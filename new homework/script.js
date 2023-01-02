@@ -135,8 +135,6 @@
 
 // // task 4
 
-
-
 // // task5
 // const g = ["Ivan", "Fedir", "Stepan", "Sergiy", "Ruslan", "Anton", "Nina"];
 // console.log(numbers3(g));
@@ -174,7 +172,6 @@
 // let IsTwo = array.every((hello)=> hello == 2)
 // console.log(IsTwo)
 
-
 // let arra2 = [5678,234,34,32,42,1]
 // let IsTwoInArray = arra2.some((hello)=> hello == 2)
 // console.log(IsTwoInArray)
@@ -183,72 +180,229 @@
 // let IsTwoInArray2 = arra2.lastIndexOf(1)
 // console.log(IsTwoInArray2)
 
-
-const names1 = ['Ivan', 'Fedir', 'Stepan', 'Sergiy', 'Ruslan', 'Anton', 'Nina']
-
-console.log (names(names1))
-
-function names(array){
-return array.map((oneName)=>oneName + " " + "Ivanenko")
-}
-mainFunction()
-function mainFunction (){
-    const names1 = ['Ivan', 'Fedir', 'Stepan', 'Sergiy', 'Ruslan', 'Anton', 'Nina']
- let howManyNames = names1.length   
-let result = createSurname(howManyNames)
-console.log(names1.map((name)=>name + " "+ result[names1.indexOf(name)]))
+let array = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(task0(array), "===============================");
+function task0(array) {
+  return array.map((number) => number * number);
 }
 
-function createSurname(howManyNames){
-    let letters = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
-    let allSurnames = []
-    for(let i = 1; i <= howManyNames; i ++){
-        let surname = ""
-        for (let j = 0; j != 5; j++){
-            let max = 26
-            let random = Math.floor(Math.random() * max);
-            surname = surname + letters[Math.round(random)]
-        }
-        allSurnames.push(surname)
-        surname = ""
+const names1 = ["Ivan", "Fedir", "Stepan", "Sergiy", "Ruslan", "Anton", "Nina"];
+
+console.log(names(names1));
+
+function names(array) {
+  return array.map((oneName) => oneName + " " + "Ivanenko");
+}
+mainFunction();
+function mainFunction() {
+  const names1 = [
+    "Ivan",
+    "Fedir",
+    "Stepan",
+    "Sergiy",
+    "Ruslan",
+    "Anton",
+    "Nina",
+  ];
+  let howManyNames = names1.length;
+  let result = createSurname(howManyNames);
+  console.log(names1.map((name) => name + " " + result[names1.indexOf(name)]));
+}
+
+function createSurname(howManyNames) {
+  let letters = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+  ];
+  let allSurnames = [];
+  for (let i = 1; i <= howManyNames; i++) {
+    let surname = "";
+    for (let j = 0; j != 5; j++) {
+      let max = 26;
+      let random = Math.floor(Math.random() * max);
+      surname = surname + letters[Math.round(random)];
     }
-    return allSurnames
+    allSurnames.push(surname);
+  }
+  return allSurnames;
 }
 
+console.log("=====================================================");
 
-
-console.log("=====================================================")
-
-mainFunction1()
-function mainFunction1 (){
-    const names1 = ['Ivan', 'Fedir', 'Stepan', 'Sergiy', 'Ruslan', 'Anton', 'Nina']
- let howManyNames = names1.length   
-let result = createSurname1(howManyNames)
-console.log(names1.map((name)=>name + " "+ result[names1.indexOf(name)]))
+mainFunction1();
+function mainFunction1() {
+  const names1 = [
+    "Ivan",
+    "Fedir",
+    "Stepan",
+    "Sergiy",
+    "Ruslan",
+    "Anton",
+    "Nina",
+  ];
+  let howManyNames = names1.length;
+  let result = createSurname1(howManyNames);
+  console.log(names1.map((name, index) => name + " " + result[index]));
 }
 
-function createSurname1(howManyNames){
-    let letters = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
-    let allSurnames = []
-    // let random2 = hello()
-    for(let i = 1; i <= howManyNames; i ++){
-        let surname = ""
-        let random2 = hello()
-        for (let j = 0; j != random2; j++){
-            let max = 26
-            let random = Math.floor(Math.random() * max);
-            surname = surname + letters[Math.round(random)]
-        }
-        allSurnames.push(surname)
+function createSurname1(howManyNames) {
+  let letters = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+  ];
+  let allSurnames = [];
+  for (let i = 1; i <= howManyNames; i++) {
+    let surname = "";
+    let random2 = randomLength();
+    for (let j = 0; j != random2; j++) {
+      let max = letters.length;
+      let random = Math.floor(Math.random() * max);
+      surname = surname + letters[random];
     }
-    return allSurnames
+    let secoundPart = surname.slice(1);
+    surname = surname[0].toUpperCase() + secoundPart;
+    allSurnames.push(surname);
+  }
+  return allSurnames;
 }
 
-function hello (){
-    let max = 4
-    let random = Math.floor(Math.random() * max);
-    let Done = Math.round(random) + 5
-    return Done 
+function randomLength() {
+  let max = 4;
+  let random = Math.floor(Math.random() * max);
+  let realLengthOfNumber = random + 5;
+  return realLengthOfNumber;
 }
 
-// не регенерується кожне слово по своєму у всіх однаково
+task4(1, 4, 5);
+function task4(a, b, c) {
+  console.log(Math.round((a + b + c) / 3));
+}
+
+let ages = [12, 20];
+console.log(task5(ages));
+
+function task5(ages) {
+  let counter1 = 0;
+  let counter2 = 0;
+  if (ages[0] * 2 > ages[1]) {
+    while (ages[0] * 2 != ages[1]) {
+      ages[0]--;
+      ages[1]--;
+      counter1++;
+    }
+    return "was " + counter1 + " year(s) ago";
+  } else {
+    while (ages[0] * 2 != ages[1]) {
+      ages[0]++;
+      ages[1]++;
+      counter2++;
+    }
+    return "will be in " + counter2 + " year(s)";
+  }
+}
+
+// hometask
+
+console.log("hometask");
+
+const arrayOfNumbers = [0, 1, 2, 3, 4, 5, null, NaN, undefined, "", " ", false];
+console.log(task1(arrayOfNumbers), "task1");
+
+function task1(array) {
+  return array.map((firstNumber) => Boolean(firstNumber));
+}
+
+console.log(task2(arrayOfNumbers), "task2");
+
+function task2(array) {
+  return array.every((firstNumber) => firstNumber == false);
+}
+
+console.log(task3(arrayOfNumbers), "task3");
+
+function task3(array) {
+  console.log (array)
+  return array.some((firstNumber) => firstNumber == false);
+}
+
+console.log(task41(arrayOfNumbers), "task4");
+
+function task41(array) {
+  console.log (array)
+  return array.filter((number)=>typeof(number) == "number")
+}
+
+console.log(task5(arrayOfNumbers), "task5");
+
+function task5(array) {
+  return array.filter((number)=>typeof(number) != "number")
+}
+
+console.log(task6(arrayOfNumbers), "task6");
+
+function task6 (array){
+  let result = 0
+  let allNumbers = array.filter((number)=>Number.isFinite(number))
+  for(let i of allNumbers){
+    result = result + i
+  }
+  return result
+}
+
+console.log(task7(arrayOfNumbers), "task7");
+
+function task7 (array){
+  let bollin = array.filter((firstNumber) => Boolean(firstNumber) == false);
+  let bollin2 = array.filter((firstNumber) => Boolean(firstNumber) != false);
+  console.log(bollin, bollin2)
+  document.getElementById("divOfGreenNumbers").innerHTML = bollin2.join(";")
+  document.getElementById("divOfRedNumbers").innerHTML = bollin.map((number)=>String(number)).sort().reverse().join(";")
+}
