@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div"></div>
+    <input type="text" id = "input">
+    <button class="addSomething" disabled onclick="addWordAtTheEnd ()"> "додати слово в кінець"</button>
+    <button class="addSomething" disabled onclick="addWordAtTheBeginning()">"додати слово в початок"</button>
+    <button class="deleteSomething" disabled onclick="deleteWordAtTheEnd()">"видалити слово з кінця"</button>
+    <button class="deleteSomething" disabled onclick="deleteWordAtTheBeginning()">"видалити слово з початку"</button>
+    <hr>
+    <input type="text" id="filter">
+    <button onclick="filter()">"Відфільтрувати"</button>
+    <div id="filterOfInput">
+    </div>
+    <hr>
+    <input type="text" id="map">
+    <button onclick="map()">"Change"</button>
+    <div id="mapOfInput">
+    </div>
+    <hr>
+    <input type="text" id="add">
+    <button onclick="add()">"add"</button>
+    <div id="addOfInput">
+    </div>
+    <hr>
+    <input type="text" id="every">
+    <button onclick="every()">"every"</button>
+    <div id="everyOfInput">
+    </div>
+    <hr>
+    <input type="text" id="some">
+    <button onclick="some()">"some"</button>
+    <div id="someOfInput">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
