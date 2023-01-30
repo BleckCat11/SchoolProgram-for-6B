@@ -3,10 +3,9 @@ let powers = {
   strength: 1,
   intelegent: 1,
 };
-let totalPower = 3;
+let resourses = 3;
 let gold = 5;
 let power = 12;
-let resourses = 3;
 
 function myPower(nameOfAPower) {
   alert("your " + nameOfAPower + "is lvl - " + powers[nameOfAPower]);
@@ -41,11 +40,11 @@ function speedFunction() {
     function () {
       let allPowers = document.getElementsByClassName("powers");
       if (gold >= 5) {
-        if (totalPower != 10) {
+        if (resourses != 10) {
           gold = gold - 5;
           allPowers[0].innerHTML = "speed - " + (Number(powers.speed) + 1);
           powers.speed = powers.speed + 1;
-          totalPower = totalPower + 1;
+          resourses = resourses + 1;
         } else {
           alert("you are too much points");
         }
@@ -63,11 +62,11 @@ function strengthFunction() {
     function () {
       let allPowers = document.getElementsByClassName("powers");
       if (gold >= 7) {
-        if (totalPower != 10) {
+        if (resourses != 10) {
           gold = gold - 7;
-          allPowers[0].innerHTML = "speed - " + (Number(powers.speed) + 1);
-          powers.speed = powers.speed + 1;
-          totalPower = totalPower + 1;
+          allPowers[1].innerHTML = "strength - " + (Number(powers.strength) + 1);
+          powers.strength = powers.strength + 1;
+          resourses = resourses + 1;
         } else {
           alert("you are too much points");
         }
@@ -86,11 +85,11 @@ function intelegentFunction() {
     function () {
       let allPowers = document.getElementsByClassName("powers");
       if (gold >= 10) {
-        if (totalPower != 10) {
+        if (resourses != 10) {
           gold = gold - 10;
-          allPowers[0].innerHTML = "speed - " + Number(powers.speed) + 1;
-          powers.speed = powers.speed + 1;
-          totalPower = totalPower + 1;
+          allPowers[2].innerHTML = "intelekt - " + Number(powers.intelegent) + 1;
+          powers.intelegent = powers.intelegent + 1;
+          resourses = resourses + 1;
         } else {
           alert("you are too much points");
         }
@@ -103,14 +102,90 @@ function intelegentFunction() {
 }
 
 function checkIfPossibleSold() {
-  let allPowers = document.getElementsByClassName("powers");
+  document.getElementById("buttonOfSoldongPowers").disabled = true
   let button = document.createElement("button");
+  button.id = "speed"
   document.body.appendChild(button);
   button.innerHTML = "sold speed";
+  button.onclick =soldSpeed
   if (powers.speed != 0) {
-    (gold = gold + 2), 5;
-    allPowers[0].innerHTML = "speed - " + powers.speed + 1;
   } else {
     button.disabled;
   }
+  let button2= document.createElement("button");
+  button2.id = "strength"
+  document.body.appendChild(button2);
+  button2.innerHTML = "sold strength";
+  button2.onclick =soldStrength
+
+
+  if (powers.strength != 0) {
+  } else {
+    button.disabled;
+  }
+  let button3= document.createElement("button");
+  button3.id = "intelekt"
+  document.body.appendChild(button3);
+  button3.innerHTML = "sold intelekt";
+  button3.onclick =soldIntelekt
+  
+
+  if (powers.intelegent != 0) {
+  } else {
+    button.disabled;
+  }
+}
+
+function soldSpeed(){
+  let allPowers = document.getElementsByClassName("powers");
+  (gold = gold + 2.5);
+    allPowers[0].innerHTML = "speed - " +( +powers.speed -1);
+    +powers.speed--
+    updatePower()
+    isNotOne()
+}
+
+function soldStrength (){
+ 
+  let allPowers = document.getElementsByClassName("powers");
+  (gold = gold + 3.5);
+    allPowers[1].innerHTML = "strength - " + (+powers.strength -1);
+    powers.strength--
+    updatePower()
+    isNotOne()
+
+}
+
+function soldIntelekt (){
+
+  let allPowers = document.getElementsByClassName("powers");
+  (gold = gold + 5);
+    allPowers[2].innerHTML = "intelegent - " + (+powers.intelegent -1);
+    powers.intelegent--
+    updatePower()
+    isNotOne()
+}
+
+function updatePower (){
+  resourses--
+ colculatePower() 
+  
+}
+
+function colculatePower (){
+power = (+powers.speed*3) + (+powers.strength * 4) + (+powers.intelegent * 5)
+console.log (power)
+
+}
+
+function isNotOne (){
+if (powers.speed == 0){
+  document.getElementById("speed").disabled = true
+} 
+if (powers.strength == 0){
+  document.getElementById("strength").disabled = true
+}
+if (powers.intelegent == 0){
+  document.getElementById("intelekt").disabled = true
+}
 }
