@@ -4,7 +4,7 @@ let powers = {
   intelegent: 1,
 };
 let resourses = 3;
-let gold = 5;
+let gold = 10;
 let power = 12;
 
 function myPower(nameOfAPower) {
@@ -188,4 +188,34 @@ if (powers.strength == 0){
 if (powers.intelegent == 0){
   document.getElementById("intelekt").disabled = true
 }
+}
+
+function goCavingButton (){
+  setTimeout(clicking, 60000)
+
+}
+
+function clicking(){
+// make abutton, count every click, delete Button, show results
+}
+
+function fieght (){
+  if (gold < 10){
+    alert("not enought gold")
+    return
+  }
+ gold = gold - 10
+ let powerOfOponmant = powerOfOponmantFunction() 
+ if(powerOfOponmant>power){
+  alert ("you lost")
+  
+ }else {
+  alert ("you won")
+  gold = gold + 20
+ }
+}
+
+function powerOfOponmantFunction() {
+  let max = 40
+  return Math.floor(Math.random() * max);
 }

@@ -30,6 +30,7 @@
 margin: 4px;
 }
 
-.buttons{
-    
+#goCavingButton{
+  display: flex;
+    top: 20%;
 }
