@@ -1,73 +1,45 @@
 
-// function User(xxx, yyy) {
-//     this.id = getNextId;
-//     this.age = yyy;
+function User(xxx, yyy) {
+    this.id = getNextId;
+    this.age = yyy;
 
-//     this.getAge = function () {
-//         console.log(this.age)
-//     }
-// }
-
-const stopwatches = [
-    {
-        id: 1,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 2,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 3,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 4,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 10,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 3,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 42,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
-    },
-    {
-        id: 11,
-        startDate: '2022-01-01', 
-        endDate: '2022-01-02', 
-        duration: 1200,
+    this.getAge = function () {
+        console.log(this.age)
     }
-];
-
-function getNextId() {
-    return stopwatches.sort((a, b) => b.id - a.id)[0]['id'];
 }
 
 
-// let user1 = new User('Jack', 10);
+const stopwatches = [
+   
+    // {
+    //     id: 42,
+    //     startDate: '2022-01-01', 
+    //     endDate: '2022-01-02', 
+    //     duration: 1200,
+    // },
+    // {
+    //     id: 11,
+    //     startDate: '2022-01-01', 
+    //     endDate: '2022-01-02', 
+    //     duration: 1200,
+    // }
+];
+
+function getNextId() {
+    return stopwatches.length?(stopwatches.sort((a, b) => b.id - a.id)[0]['id']+1) : 1;
+}
+
+function Stopwatch (){
+    this.id = getNextId();
+    this.startDate = new Date()
+    this.endDate = null;
+    this.duration = 0
+}
+
+let stopwatch1 = new Stopwatch()
+console.log(stopwatch1)
 // let user2 = new User('Jack', 100);
-// user1.getAge();
-// user2.getAge();
+
 
 // Створити секундомір.
 
